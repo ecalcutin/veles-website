@@ -1,60 +1,41 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
+    <v-app-bar app class="veles-container">
+      <v-img
+        alt="Велес логотип"
+        class="shrink mr-2"
+        :src="require('@/assets/grave.svg')"
+        transition="scale-transition"
+        width="30"
+      />
+      <span style="font-size: 30px">𝐕𝐄𝐋𝐄𝐒</span>
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <v-btn class="nav-button" :ripple="false" text to="/" tag="a">Главная</v-btn>
+      <v-btn class="nav-button" :ripple="false" text to="/gravestones" tag="a">Памятники</v-btn>
+      <v-btn class="nav-button" :ripple="false" text to="/accessories" tag="a">Атрибутика</v-btn>
+      <v-btn class="nav-button" :ripple="false" text to="/decor" tag="a">Декор</v-btn>
+      <v-btn class="nav-button" :ripple="false" text to="/services" tag="a">Услуги</v-btn>
+      <v-btn class="nav-button" :ripple="false" text to="/contacts" tag="a">КОнтакты</v-btn>
     </v-app-bar>
-
     <v-content>
-      <HelloWorld/>
+      <router-view />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
-  name: 'App',
-
-  components: {
-    HelloWorld,
-  },
-
-  data: () => ({
-    //
-  }),
+  name: "App",
+  components: {},
+  data: () => ({})
 };
 </script>
+
+<style lang="scss" scoped>
+.nav-button {
+  background-color: transparent;
+  &::before {
+    background-color: transparent;
+  }
+}
+</style> 
