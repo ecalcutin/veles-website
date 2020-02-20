@@ -19,10 +19,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.nav-button {
-  background-color: transparent;
-  &::before {
-    background-color: transparent;
-  }
-}
 </style> 

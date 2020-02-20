@@ -9,11 +9,13 @@
     />
     <span style="font-size: 30px">𝐕𝐄𝐋𝐄𝐒</span>
     <v-spacer></v-spacer>
-    <v-btn class="nav-button" :ripple="false" text to="/" tag="a">Главная</v-btn>
-    <v-btn class="nav-button" :ripple="false" text to="/gravestones" tag="a">Памятники</v-btn>
-    <v-btn class="nav-button" :ripple="false" text to="/accessories" tag="a">Атрибутика</v-btn>
-    <v-btn class="nav-button" :ripple="false" text to="/decor" tag="a">Декор</v-btn>
-    <v-btn class="nav-button" :ripple="false" text to="/services" tag="a">Услуги</v-btn>
-    <v-btn class="nav-button" :ripple="false" text to="/contacts" tag="a">КОнтакты</v-btn>
+    <v-toolbar-items>
+      <v-btn text to="/" tag="a">Главная</v-btn>
+      <v-btn text to="/gravestones" tag="a">Памятники</v-btn>
+      <v-btn text to="/accessories" tag="a">Атрибутика</v-btn>
+      <v-btn text to="/decor" tag="a">Декор</v-btn>
+      <v-btn text to="/services" tag="a">Услуги</v-btn>
+      <v-btn text to="/contacts" tag="a">КОнтакты</v-btn>
+    </v-toolbar-items>
   </v-app-bar>
 </template>
