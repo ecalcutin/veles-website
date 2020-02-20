@@ -3,7 +3,7 @@
     <v-img
       alt="Велес логотип"
       class="shrink mr-2"
-      :src="require('@/assets/grave.svg')"
+      :src="require('@/assets/images/logo.svg')"
       transition="scale-transition"
       width="30"
     />
