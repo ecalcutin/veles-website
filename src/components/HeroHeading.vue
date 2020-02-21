@@ -1,5 +1,5 @@
 <template>
-  <v-sheet tile color="accent" class="page-container">
+  <v-sheet tile color="accent" class="app-container">
     <v-row no-gutters align="end" class="white--text row-container">
       <div class="text">
         <h1>{{title}}</h1>
