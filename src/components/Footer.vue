@@ -3,9 +3,9 @@
     <v-row justify="center" no-gutters>
       <div class="py-4">
         <v-btn color="white" text rounded>Главная</v-btn>
-        <v-btn color="white" text rounded>Памятники</v-btn>
-        <v-btn color="white" text rounded>Атрибутика</v-btn>
-        <v-btn color="white" text rounded>Декор</v-btn>
+        <v-btn class="d-none d-sm-inline" color="white" text rounded>Памятники</v-btn>
+        <v-btn class="d-none d-md-inline" color="white" text rounded>Атрибутика</v-btn>
+        <v-btn class="d-none d-md-inline" color="white" text rounded>Декор</v-btn>
         <v-btn color="white" text rounded>Услуги</v-btn>
         <v-btn color="white" text rounded>Контакты</v-btn>
       </div>
