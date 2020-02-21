@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="sideNav" app>
+  <v-navigation-drawer disable-resize-watcher v-model="sideNav" app>
     <v-list>
       <v-subheader>Меню</v-subheader>
       <v-list-item-group>
