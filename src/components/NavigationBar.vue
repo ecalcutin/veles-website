@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar clipped-left app class="veles-container">
+  <v-app-bar clipped-left app class="app-container">
     <div id="brand-container" class="d-flex">
       <v-app-bar-nav-icon @click="toggleSideNav" class="d-xs-flex d-md-none"></v-app-bar-nav-icon>
       <v-spacer class="d-md-none d-sm-flex" />
