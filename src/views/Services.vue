@@ -9,7 +9,7 @@
         <v-icon class="mr-2">mdi-link</v-icon>Ремонт и реставрация
       </h2>
       <div class="my-5 body-1">
-        <!-- <v-parallax height="350" src="https://veles.md/static/images/remount.jpg"></v-parallax> -->
+        <v-img class="float-right" :src="require('@/assets/images/remount.jpg')" />
         <p>
           Для того чтобы место захоронения с установленным ритуальным надгробием всегда
           сохраняли свой первичный ухоженный вид, периодически необходимо проводить
@@ -130,9 +130,33 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 p {
   text-align: justify;
   text-indent: 2em;
+}
+
+.float-right {
+  border-radius: 25px;
+  @media only screen and (max-width: 680px) {
+    width: 100%;
+    float: none !important;
+  }
+  @media only screen and (min-width: 960px) {
+    margin: 0 10px 10px 10px;
+    max-width: 500px;
+    float: right;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    margin: 0 10px 10px 10px;
+    max-width: 700px;
+    float: right;
+  }
+  @media only screen and (min-width: 1800px) {
+    margin: 0 10px 10px 10px;
+    max-width: 1000px;
+    float: right;
+  }
 }
 </style>
