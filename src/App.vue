@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <SideNavigation />
     <NavigationBar />
     <v-content>
       <router-view />
@@ -10,11 +11,13 @@
 
 <script>
 import NavigationBar from "@/components/NavigationBar";
+import SideNavigation from "@/components/SideNavigation";
 import Footer from "@/components/Footer";
 export default {
   name: "App",
   components: {
     NavigationBar,
+    SideNavigation,
     Footer
   },
   data: () => ({})

@@ -1,7 +1,7 @@
 <template>
-  <v-app-bar app class="veles-container">
+  <v-app-bar clipped-left app class="veles-container">
     <div id="brand-container" class="d-flex">
-      <v-app-bar-nav-icon class="d-xs-flex d-md-none"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="toggleSideNav" class="d-xs-flex d-md-none"></v-app-bar-nav-icon>
       <v-spacer class="d-md-none d-sm-flex" />
       <div class="d-flex align-center">
         <v-img
@@ -26,6 +26,18 @@
     </v-toolbar-items>
   </v-app-bar>
 </template>
+
+<script>
+import { UI_SIDENAV_TOGGLE } from "@/store/ui/action-types";
+export default {
+  name: "NavigationBar",
+  methods: {
+    toggleSideNav() {
+      this.$store.dispatch(UI_SIDENAV_TOGGLE);
+    }
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 #brand-container {
