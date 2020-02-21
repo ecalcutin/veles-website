@@ -13,8 +13,11 @@ export default {
       get() {
         return this.$store.state.UI.sideNav.opened;
       },
-      set(opened) {
-        this.$store.dispatch(UI_SIDENAV_TOGGLE, opened);
+      set(value) {
+        if (!value) {
+          // dispatch only if need to close
+          this.$store.dispatch(UI_SIDENAV_TOGGLE, value);
+        }
       }
     }
   }
