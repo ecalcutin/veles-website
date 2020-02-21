@@ -33,7 +33,7 @@ export default {
   name: "NavigationBar",
   methods: {
     toggleSideNav() {
-      this.$store.dispatch(UI_SIDENAV_TOGGLE);
+      this.$store.dispatch(UI_SIDENAV_TOGGLE, true);
     }
   }
 };
