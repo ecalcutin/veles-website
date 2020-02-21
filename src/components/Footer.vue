@@ -12,7 +12,7 @@
       <v-col class="accent lighten-2 py-4 text-center white--text" cols="12">
         <span>
           2003 - {{currentYear}}
-          <strong>VELES S.R.L.</strong>
+          <strong>&laquo;VELES S.R.L.&raquo;</strong>
         </span>
       </v-col>
     </v-row>
