@@ -24,20 +24,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.row-container {
-  height: 100%;
-  padding: 0 16px;
-
-  .text {
-    margin-top: 80px;
-    margin-bottom: 20px;
-    h1 {
-      text-transform: uppercase;
-      font-weight: 300;
-    }
-    p {
-      font-weight: 300;
-    }
+.text {
+  margin-top: 80px;
+  margin-bottom: 20px;
+  h1 {
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+  p {
+    font-weight: 300;
   }
 }
 </style>
