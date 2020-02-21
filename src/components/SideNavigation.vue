@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="sideNav" clipped absolute app>
+  <v-navigation-drawer clipped v-model="sideNav" app>
     <!-- -->
   </v-navigation-drawer>
 </template>
@@ -14,10 +14,7 @@ export default {
         return this.$store.state.UI.sideNav.opened;
       },
       set(value) {
-        if (!value) {
-          // dispatch only if need to close
-          this.$store.dispatch(UI_SIDENAV_TOGGLE, value);
-        }
+        if (!value) this.$store.dispatch(UI_SIDENAV_TOGGLE, value);
       }
     }
   }
