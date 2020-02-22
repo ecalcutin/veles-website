@@ -1,139 +1,159 @@
 <template>
   <div>
-    <HeroHeading title="Контакты" description="Рассматриваем варианты сотрудничества" />
-    <main class="app-container">
-      <v-row justify="center">
-        <v-col>
-          <v-row no-gutters>
-            <v-sheet width="100%" class="text-center my-5 py-5">
-              <h2 class="d-inline display-3 text-center">Свяжитесь с нами</h2>
-            </v-sheet>
-          </v-row>
-          <v-row>
-            <v-col>
-              <v-card flat>
-                <v-card-title class="justify-end reverse-flex">Наши адреса</v-card-title>
-                <v-card-subtitle class="text-right reverse-text">Офис и филиалы</v-card-subtitle>
-                <v-card-text>
-                  <v-list>
+    <HeroHeading title="Контакты" description="Рассматриваем варианты сотрудничества">
+      <v-btn fab absolute bottom right>
+        <v-icon>mdi-phone</v-icon>
+      </v-btn>
+    </HeroHeading>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d176206.93841274903!2d28.49659771473298!3d46.36475683996693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c9deef79056f11%3A0x7d94d6b789bc7e04!2sVelesstan!5e0!3m2!1sen!2s!4v1582401432050!5m2!1sen!2s"
+      width="100%"
+      height="400"
+      frameborder="0"
+      style="border:0; display:block;"
+      allowfullscreen
+    ></iframe>
+    <v-sheet color="accent" dark tile class="sheet-block">
+      <v-container fluid>
+        <v-row justify="center">
+          <v-col cols="12" sm="8" md="6" lg="5" class="text-center">
+            <h2 class="display-1">НАПИШИТЕ НАМ</h2>
+            <div style="height: 24px" />
+            <v-form>
+              <v-container>
+                <v-row>
+                  <v-col cols="12" xs="12" sm="12" md="6">
+                    <v-text-field
+                      type="text"
+                      label="Как к Вам обратиться?"
+                      autocomplete="new-password"
+                    />
+                  </v-col>
+                  <v-col cols="12" xs="12" md="6">
+                    <v-text-field type="tel" label="Телефон" autocomplete="new-password" />
+                  </v-col>
+                  <v-col cols="12" xs="12" md="12">
+                    <v-textarea rows="2" label="Текст сообщения" />
+                  </v-col>
+                  <v-btn block text>Отправить</v-btn>
+                </v-row>
+              </v-container>
+            </v-form>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-sheet>
+    <v-sheet tile class="sheet-block">
+      <v-container fluid>
+        <v-row justify="center">
+          <v-col cols="12" sm="8" md="7" class="text-center">
+            <h2 class="display-1">НАША КОМАНДА</h2>
+            <div style="height: 24px" />
+            <v-row>
+              <v-col cols="12" xs="12" sm="12" md="4">
+                <v-card flat>
+                  <v-card-text class="pb-0">
+                    <v-avatar size="128">
+                      <img
+                        :src="require('@/assets/images/calcutina_natalia.jpg')"
+                        alt="Калкутина Наталья"
+                      />
+                    </v-avatar>
                     <v-list-item>
-                      <v-list-item-content class="text-right reverse-text">
-                        <v-list-item-title>ул. Ленина, 3а</v-list-item-title>
-                        <v-list-item-subtitle>г. Комрат</v-list-item-subtitle>
-                      </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item>
-                      <v-list-item-content class="text-right reverse-text">
-                        <v-list-item-title>ул. Шевченко, 54</v-list-item-title>
-                        <v-list-item-subtitle>г. Комрат</v-list-item-subtitle>
-                      </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item>
-                      <v-list-item-content class="text-right reverse-text">
-                        <v-list-item-title>ул. Победы, 29</v-list-item-title>
-                        <v-list-item-subtitle>г. Комрат</v-list-item-subtitle>
-                      </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item>
-                      <v-list-item-content class="text-right reverse-text">
-                        <v-list-item-title>ул. Гагарина, 26</v-list-item-title>
-                        <v-list-item-subtitle>г. Каушаны</v-list-item-subtitle>
-                      </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item>
-                      <v-list-item-content class="text-right reverse-text">
-                        <v-list-item-title>ул. Барбу Лэутару, 13</v-list-item-title>
-                        <v-list-item-subtitle>г. Чимишлия</v-list-item-subtitle>
-                      </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item>
-                      <v-list-item-content class="text-right reverse-text">
-                        <v-list-item-title>ул. Ленина, 13</v-list-item-title>
-                        <v-list-item-subtitle>г. Чадыр-Лунга</v-list-item-subtitle>
-                      </v-list-item-content>
-                    </v-list-item>
-                  </v-list>
-                </v-card-text>
-              </v-card>
-            </v-col>
-            <v-divider class="d-none d-sm-flex" vertical></v-divider>
-            <v-col>
-              <v-card flat>
-                <v-card-title>Наши сотрудники</v-card-title>
-                <v-card-subtitle>Руководители и менеджеры</v-card-subtitle>
-                <v-card-text>
-                  <v-list>
-                    <v-list-item>
-                      <v-list-item-avatar>
-                        <img
-                          :src="require('@/assets/images/calcutina_natalia.jpg')"
-                          alt="Калкутина Наталья"
-                        />
-                      </v-list-item-avatar>
-                      <v-list-item-content>
+                      <v-list-item-content class="pb-0">
                         <v-list-item-title>Калкутина Наталья</v-list-item-title>
                         <v-list-item-subtitle>Руководитель</v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+              <v-col cols="12" xs="12" sm="12" md="4">
+                <v-card flat>
+                  <v-card-text class="pb-0">
+                    <v-avatar size="128">
+                      <img
+                        :src="require('@/assets/images/calcutin_serghei.jpg')"
+                        alt="Калкутин Сергей"
+                      />
+                    </v-avatar>
                     <v-list-item>
-                      <v-list-item-avatar>
-                        <img
-                          :src="require('@/assets/images/calcutin_serghei.jpg')"
-                          alt="Калкутин Сергей"
-                        />
-                      </v-list-item-avatar>
-                      <v-list-item-content>
+                      <v-list-item-content class="pb-0">
                         <v-list-item-title>Калкутин Сергей</v-list-item-title>
                         <v-list-item-subtitle>Руководитель</v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+              <v-col cols="12" xs="12" sm="12" md="4">
+                <v-card flat>
+                  <v-card-text class="pb-0">
+                    <v-avatar size="128">
+                      <img :src="require('@/assets/images/pavel_iularji.jpg')" alt="Павел Юларжи" />
+                    </v-avatar>
                     <v-list-item>
-                      <v-list-item-avatar>
-                        <img :src="require('@/assets/images/pavel_iularji.jpg')" alt="Павел Юларжи" />
-                      </v-list-item-avatar>
-                      <v-list-item-content>
-                        <v-list-item-title>Павел Юларжи</v-list-item-title>
+                      <v-list-item-content class="pb-0">
+                        <v-list-item-title>Юларжи Павел</v-list-item-title>
                         <v-list-item-subtitle>Руководитель</v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+              <v-col cols="12" xs="12" sm="12" md="4">
+                <v-card flat>
+                  <v-card-text class="pb-0">
+                    <v-avatar size="128">
+                      <img :src="require('@/assets/images/vlah_anna.jpg')" alt="Влах Анна" />
+                    </v-avatar>
                     <v-list-item>
-                      <v-list-item-avatar>
-                        <img :src="require('@/assets/images/vlah_anna.jpg')" alt="Влах Анна" />
-                      </v-list-item-avatar>
-                      <v-list-item-content>
+                      <v-list-item-content class="pb-0">
                         <v-list-item-title>Влах Анна</v-list-item-title>
                         <v-list-item-subtitle>Менеджер</v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+              <v-col cols="12" xs="12" sm="12" md="4">
+                <v-card flat>
+                  <v-card-text class="pb-0">
+                    <v-avatar size="128">
+                      <img
+                        :src="require('@/assets/images/calcutin_evgheni.jpg')"
+                        alt="Калкутин Евгений"
+                      />
+                    </v-avatar>
                     <v-list-item>
-                      <v-list-item-avatar>
-                        <img
-                          :src="require('@/assets/images/calcutin_evgheni.jpg')"
-                          alt="Калкутин Евгений"
-                        />
-                      </v-list-item-avatar>
-                      <v-list-item-content>
+                      <v-list-item-content class="pb-0">
                         <v-list-item-title>Калкутин Евгений</v-list-item-title>
                         <v-list-item-subtitle>Менеджер</v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+              <v-col cols="12" xs="12" sm="12" md="4">
+                <v-card flat>
+                  <v-card-text class="pb-0">
+                    <v-avatar color="accent" size="128">
+                      <span class="headline white--text">ТА</span>
+                    </v-avatar>
                     <v-list-item>
-                      <v-list-item-avatar>
-                        <v-icon x-large>mdi-account-circle</v-icon>
-                      </v-list-item-avatar>
-                      <v-list-item-content>
+                      <v-list-item-content class="pb-0">
                         <v-list-item-title>Толмач Александр</v-list-item-title>
                         <v-list-item-subtitle>Менеджер</v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
-                  </v-list>
-                </v-card-text>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-    </main>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-sheet>
   </div>
 </template>
 
@@ -143,7 +163,8 @@ export default {
   name: "ContactsPage",
   components: {
     HeroHeading
-  }
+  },
+  methods: {}
 };
 </script>
 
@@ -155,5 +176,8 @@ export default {
   .reverse-text {
     text-align: left !important;
   }
+}
+.sheet-block {
+  padding: 48px 0;
 }
 </style>
