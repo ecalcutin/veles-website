@@ -1,11 +1,12 @@
 <template>
-  <v-sheet tile color="accent" class="app-container">
+  <v-sheet tile color="accent" class="app-container action-fab-container">
     <v-row no-gutters align="end" class="white--text row-container">
       <div class="text">
         <h1>{{title}}</h1>
         <p>{{description}}</p>
       </div>
     </v-row>
+    <slot></slot>
   </v-sheet>
 </template>
 
@@ -34,5 +35,8 @@ export default {
   p {
     font-weight: 300;
   }
+}
+.action-fab-container {
+  position: relative;
 }
 </style>
