@@ -128,7 +128,7 @@
                     <v-list-item>
                       <v-list-item-content class="pb-0">
                         <v-list-item-title>Калкутин Евгений</v-list-item-title>
-                        <v-list-item-subtitle>Менеджер</v-list-item-subtitle>
+                        <v-list-item-subtitle>Контент менеджер</v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
                   </v-card-text>
@@ -146,7 +146,7 @@
                     <v-list-item>
                       <v-list-item-content class="pb-0">
                         <v-list-item-title>Толмач Александр</v-list-item-title>
-                        <v-list-item-subtitle>Менеджер</v-list-item-subtitle>
+                        <v-list-item-subtitle>Контент менеджер</v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
                   </v-card-text>
