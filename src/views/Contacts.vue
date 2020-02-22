@@ -16,7 +16,7 @@
     <v-sheet color="accent" dark tile class="sheet-block">
       <v-container fluid>
         <v-row justify="center">
-          <v-col cols="12" sm="8" md="6" lg="5" class="text-center">
+          <v-col cols="12" xs="12" sm="8" lg="7" class="text-center">
             <h2 class="display-1">НАПИШИТЕ НАМ</h2>
             <div style="height: 24px" />
             <v-form>
@@ -46,7 +46,7 @@
     <v-sheet tile class="sheet-block">
       <v-container fluid>
         <v-row justify="center">
-          <v-col cols="12" sm="8" md="7" class="text-center">
+          <v-col cols="12" xs="12" sm="8" lg="7" class="text-center">
             <h2 class="display-1">НАША КОМАНДА</h2>
             <div style="height: 24px" />
             <v-row>
@@ -138,7 +138,10 @@
                 <v-card flat>
                   <v-card-text class="pb-0">
                     <v-avatar color="accent" size="128">
-                      <span class="headline white--text">ТА</span>
+                      <img
+                        :src="require('@/assets/images/tolmach_alexandr.jpg')"
+                        alt="Толмач Александр"
+                      />
                     </v-avatar>
                     <v-list-item>
                       <v-list-item-content class="pb-0">
