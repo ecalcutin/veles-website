@@ -150,6 +150,7 @@
 <script>
 import HeroHeading from "@/components/HeroHeading";
 export default {
+  name: "ServicesPage",
   components: {
     HeroHeading
   }
