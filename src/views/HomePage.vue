@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-parallax height="350" :src="require('@/assets/images/parallax-home.jpg')">
-      <v-row justify="center">
-        <v-col class="py-0" xs="10" sm="10" md="10" lg="9" xl="6">
+      <v-row justify="center" class="app-container">
+        <v-col class="py-0" xs="10" sm="10" md="10">
           <v-row class="fill-height" justify="center" align="center">
             <v-col cols="12" xs="8" sm="8" md="5" lg="5" xl="5">
               <h1 class="display-1 font-weight-thin mb-4">
