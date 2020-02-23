@@ -42,11 +42,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#toolbar {
-  .app-container {
-    height: 100%;
-  }
-}
 #brand-container {
   width: 100%;
   div {

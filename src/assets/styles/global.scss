@@ -5,3 +5,14 @@
   padding: 0 24px;
   position: relative;
 }
+
+#toolbar {
+  .v-toolbar__content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .app-container {
+    height: 100%;
+  }
+}
+
