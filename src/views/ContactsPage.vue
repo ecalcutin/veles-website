@@ -14,25 +14,25 @@
       allowfullscreen
     ></iframe>
     <v-sheet color="accent" dark tile class="sheet-block">
-      <v-container fluid>
+      <v-container fluid class="app-container">
         <v-row justify="center">
-          <v-col cols="12" xs="12" sm="8" lg="7" class="text-center">
+          <v-col cols="12" sm="10" class="text-center">
             <h2 class="display-1">НАПИШИТЕ НАМ</h2>
             <div style="height: 24px" />
             <v-form>
               <v-container>
                 <v-row>
-                  <v-col cols="12" xs="12" sm="12" md="6">
+                  <v-col cols="12" sm="6" md="6">
                     <v-text-field
                       type="text"
                       label="Как к Вам обратиться?"
                       autocomplete="new-password"
                     />
                   </v-col>
-                  <v-col cols="12" xs="12" md="6">
+                  <v-col cols="12"  sm="6" md="6">
                     <v-text-field type="tel" label="Телефон" autocomplete="new-password" />
                   </v-col>
-                  <v-col cols="12" xs="12" md="12">
+                  <v-col cols="12" md="12">
                     <v-textarea rows="2" label="Текст сообщения" />
                   </v-col>
                   <v-btn block text>Отправить</v-btn>
@@ -44,13 +44,13 @@
       </v-container>
     </v-sheet>
     <v-sheet tile class="sheet-block">
-      <v-container fluid>
+      <v-container fluid class="app-container">
         <v-row justify="center">
-          <v-col cols="12" xs="12" sm="8" lg="7" class="text-center">
+          <v-col cols="12" sm="10" lg="7" class="text-center">
             <h2 class="display-1">НАША КОМАНДА</h2>
             <div style="height: 24px" />
             <v-row>
-              <v-col cols="12" xs="12" sm="12" md="4">
+              <v-col cols="12" sm="6" md="4">
                 <v-card flat>
                   <v-card-text class="pb-0">
                     <v-avatar size="128">
@@ -68,7 +68,7 @@
                   </v-card-text>
                 </v-card>
               </v-col>
-              <v-col cols="12" xs="12" sm="12" md="4">
+              <v-col cols="12" sm="6" md="4">
                 <v-card flat>
                   <v-card-text class="pb-0">
                     <v-avatar size="128">
@@ -86,7 +86,7 @@
                   </v-card-text>
                 </v-card>
               </v-col>
-              <v-col cols="12" xs="12" sm="12" md="4">
+              <v-col cols="12" sm="6" md="4">
                 <v-card flat>
                   <v-card-text class="pb-0">
                     <v-avatar size="128">
@@ -101,7 +101,7 @@
                   </v-card-text>
                 </v-card>
               </v-col>
-              <v-col cols="12" xs="12" sm="12" md="4">
+              <v-col cols="12" sm="6" md="4">
                 <v-card flat>
                   <v-card-text class="pb-0">
                     <v-avatar size="128">
@@ -116,7 +116,7 @@
                   </v-card-text>
                 </v-card>
               </v-col>
-              <v-col cols="12" xs="12" sm="12" md="4">
+              <v-col cols="12" sm="6" md="4">
                 <v-card flat>
                   <v-card-text class="pb-0">
                     <v-avatar size="128">
@@ -134,7 +134,7 @@
                   </v-card-text>
                 </v-card>
               </v-col>
-              <v-col cols="12" xs="12" sm="12" md="4">
+              <v-col cols="12" sm="6" md="4">
                 <v-card flat>
                   <v-card-text class="pb-0">
                     <v-avatar color="accent" size="128">
