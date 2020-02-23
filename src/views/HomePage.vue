@@ -4,7 +4,7 @@
       <v-row justify="center" class="app-container">
         <v-col class="py-0" sm="12">
           <v-row class="fill-height" justify="center" align="center">
-            <v-col cols="12" sm="7" md="5">
+            <v-col class="text-center" cols="12" sm="7" md="7">
               <h1 class="display-1 font-weight-thin mb-4">
                 Гарантия памяти
                 <br />о ваших близких
