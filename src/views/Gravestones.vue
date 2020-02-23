@@ -2,18 +2,14 @@
   <v-container fluid class="app-container">
     <v-row>
       <v-col cols="12" sm="3" class="d-none d-sm-flex">
-        <v-list>
-          <v-subheader>Памятники</v-subheader>
-          <v-list-item>
-            <v-list-item-title>Гранитные</v-list-item-title>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title>Бетонные</v-list-item-title>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title>Мраморные</v-list-item-title>
-          </v-list-item>
-        </v-list>
+        <v-form>
+          <v-subheader>Фильтры</v-subheader>
+          <v-card flat>
+            <v-card-text class="pt-0">
+              <v-select item-text="title" :items="materialType" label="Материал"></v-select>
+            </v-card-text>
+          </v-card>
+        </v-form>
       </v-col>
       <v-col cols="12" sm="9">
         <v-row no-gutters class="d-sm-none">
@@ -25,20 +21,9 @@
                 </div>
               </v-expansion-panel-header>
               <v-expansion-panel-content>
-                <v-row>
-                  <v-col>
-                    <v-checkbox label="Одинарные" />
-                  </v-col>
-                  <v-col>
-                    <v-checkbox label="Двойные" />
-                  </v-col>
-                  <v-col>
-                    <v-checkbox label="Мраморные" />
-                  </v-col>
-                  <v-col>
-                    <v-checkbox label="Бетонные" />
-                  </v-col>
-                </v-row>
+                <v-form>
+                  <v-select item-text="title" :items="materialType" label="Материал"></v-select>
+                </v-form>
               </v-expansion-panel-content>
             </v-expansion-panel>
           </v-expansion-panels>
@@ -61,7 +46,21 @@ export default {
   name: "GravestonesPage",
   data() {
     return {
-      count: 24
+      count: 24,
+      materialType: [
+        {
+          title: "Гранитные",
+          value: "granite"
+        },
+        {
+          title: "Бетонные",
+          value: "concrete"
+        },
+        {
+          title: "Мраморные",
+          value: "mramor"
+        }
+      ]
     };
   }
 };
