@@ -45,6 +45,14 @@ export default {
     afterEnter(element) {
       element.style.height = "auto";
     }
+  },
+  watch: {
+    $route: {
+      immediate: true,
+      handler(to, from) {
+        document.title = to.meta.title;
+      }
+    }
   }
 };
 </script>
