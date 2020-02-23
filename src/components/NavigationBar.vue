@@ -1,5 +1,6 @@
 <template>
-  <v-app-bar clipped-left app class="app-container">
+  <v-app-bar clipped-left app>
+    <div class="d-flex app-container">
     <div id="brand-container" class="d-flex">
       <v-app-bar-nav-icon @click="toggleSideNav" class="d-xs-flex d-md-none"></v-app-bar-nav-icon>
       <v-spacer class="d-md-none d-sm-flex" />
@@ -24,6 +25,7 @@
       <v-btn text to="/services" tag="a">Услуги</v-btn>
       <v-btn text to="/contacts" tag="a">КОнтакты</v-btn>
     </v-toolbar-items>
+    </div>
   </v-app-bar>
 </template>
 
