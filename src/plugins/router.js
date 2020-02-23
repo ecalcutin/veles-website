@@ -14,6 +14,17 @@ const routes = [
     }
   },
   {
+    path: '/gravestones',
+    name: 'Gravestones',
+    component: () =>
+      import(
+        /* webpackChunkName: "gravestones-page" */ '../views/Gravestones.vue'
+      ),
+    meta: {
+      title: 'Памятники'
+    }
+  },
+  {
     path: '/services',
     name: 'Services',
     component: () =>
