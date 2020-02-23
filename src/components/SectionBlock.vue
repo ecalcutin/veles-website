@@ -20,9 +20,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .section-block {
-  padding: 48px 0;
+  padding: 64px 0;
 }
 h2 {
+  margin-bottom: 32px;
+  font-weight: 300 !important;
   text-align: center;
   text-transform: uppercase;
 }
