@@ -2,9 +2,9 @@
   <div>
     <v-parallax height="350" :src="require('@/assets/images/parallax-home.jpg')">
       <v-row justify="center" class="app-container">
-        <v-col class="py-0" xs="10" sm="10" md="10">
+        <v-col class="py-0" sm="12">
           <v-row class="fill-height" justify="center" align="center">
-            <v-col cols="12" xs="8" sm="8" md="5" lg="5" xl="5">
+            <v-col cols="12" sm="7" md="5">
               <h1 class="display-1 font-weight-thin mb-4">
                 Гарантия памяти
                 <br />о ваших близких
@@ -23,7 +23,7 @@
                 elevation="24"
               >Выбрать памятник</v-btn>
             </v-col>
-            <v-col class="py-0 d-none d-md-flex" cols="12" md="6" lg="6" xl="7">
+            <v-col id="stone" class="py-0 d-none d-sm-flex" cols="12" sm="5" md="5">
               <v-img :src="require('@/assets/images/BannerImg.png')" />
             </v-col>
           </v-row>
@@ -44,4 +44,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media only screen and (max-width: 780px) {
+  #stone {
+    display: none !important;
+  }
+}
 </style>
