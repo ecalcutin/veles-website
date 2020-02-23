@@ -23,30 +23,78 @@
                 elevation="24"
               >Выбрать памятник</v-btn>
             </v-col>
-            <v-col id="stone" class="py-0 d-none d-sm-flex" cols="12" sm="5" md="5">
+            <v-col class="py-0 image-breakpoint" cols="12" sm="5" md="5">
               <v-img :src="require('@/assets/images/BannerImg.png')" />
             </v-col>
           </v-row>
         </v-col>
       </v-row>
     </v-parallax>
-    <v-sheet height="400"></v-sheet>
-    <v-sheet height="400" color="grey"></v-sheet>
+    <SectionBlock color="#dcd7d2" title="Высочайшее качество">
+      <v-row align="center">
+        <v-col cols="12" sm="6">
+          <v-img
+            contain
+            max-height="200"
+            :src="require('@/assets/images/StandardsImg.png')"
+            :lazy-src="require('@/assets/images/StandardsImg.png')"
+          />
+        </v-col>
+        <v-col cols="12" sm="6">
+          <h3 class="text-center text-sm-left">О нашей мастерской</h3>
+          <p>
+            Наша Компания специализируется на изготовлении <strong>гранитных надгробных памятников</strong> эксклюзивного дизайна.
+            Каждый
+            <strong>гранитный памятник</strong> для нас - произведение искусства. Каждая деталь прорабатывается тщательно
+            на всем этапе
+            <strong>призводства</strong>.
+          </p>
+        </v-col>
+      </v-row>
+    </SectionBlock>
+    <v-sheet tile height="400">
+      <v-container fluid class="app-container">
+        <v-row justify="center">
+          <v-col cols="12" sm="10" lg="7" class="text-center">
+            <h2 class="display-1">НАША КОМАНДА</h2>
+            <div style="height: 24px" />
+            <v-row></v-row>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-sheet>
+    <v-sheet tile height="400"></v-sheet>
   </div>
 </template>
 
 <script>
+import SectionBlock from "@/components/SectionBlock";
 export default {
   name: "HomePage",
-  components: {},
+  components: {
+    SectionBlock
+  },
   computed: {}
 };
 </script>
 
 <style lang="scss" scoped>
 @media only screen and (max-width: 780px) {
-  #stone {
+  .image-breakpoint {
     display: none !important;
   }
 }
+h3 {
+  margin-bottom: 24px;
+}
+p {
+  text-indent: 1em;
+  text-align: justify;
+}
+
+// @media only screen and (max-width: 960px) {
+//   .image {
+//     display: none !important;
+//   }
+// }
 </style>
