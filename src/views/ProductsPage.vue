@@ -58,7 +58,7 @@ import {
 } from "@/store/products/mutation-types";
 import { PRODUCTS_GET } from "@/store/products/action-types";
 export default {
-  name: "GravestonesPage",
+  name: "ProductsPage",
   data() {
     return {};
   },
