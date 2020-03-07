@@ -1,1 +1,0 @@
-export const PRODUCTS_GET = '[WEBSITE] - PRODUCTS/GET';

@@ -29,12 +29,7 @@
           </v-expansion-panels>
         </v-row>
         <v-divider class="d-md-none" />
-        <v-data-iterator
-          :server-items-length="totalDocs"
-          :items-per-page.sync="itemsPerPage"
-          :page.sync="page"
-          :items="items"
-        >
+        <v-data-iterator hide-default-footer :server-items-length="totalDocs" :items="items">
           <template v-slot:default="props">
             <v-row>
               <v-col v-for="item in props.items" :key="item._id" cols="12" sm="6" md="3">
@@ -45,6 +40,7 @@
             </v-row>
           </template>
         </v-data-iterator>
+        <v-pagination v-model="currentPage" class="my-4" :length="pages"></v-pagination>
       </v-col>
     </v-row>
   </v-container>
@@ -52,56 +48,43 @@
 
 <script>
 import api from "@/plugins/api";
-import {
-  PAGE_INDEX_SET,
-  PAGE_LIMIT_SET
-} from "@/store/products/mutation-types";
-import { PRODUCTS_GET } from "@/store/products/action-types";
 export default {
   name: "ProductsPage",
   data() {
-    return {};
+    return {
+      items: [],
+      totalDocs: 0,
+      currentPage: 1
+    };
   },
+
+  // watch: {
+  //   $route(to, from) {
+  //     this.$store.dispatch(PRODUCTS_GET, {
+  //       category: this.$route.query.category
+  //     });
+  //   }
+  // },
   computed: {
-    items() {
-      return this.$store.state.products.items;
-    },
-    totalDocs() {
-      return this.$store.state.products.pagination.totalDocs;
-    },
-    page: {
-      get() {
-        return this.$store.state.products.pagination.page;
-      },
-      set(index) {
-        this.$store.commit(PAGE_INDEX_SET, index);
-        this.$store.dispatch(PRODUCTS_GET);
-      }
-    },
-    itemsPerPage: {
-      get() {
-        return this.$store.state.products.pagination.itemsPerPage;
-      },
-      set(limit) {
-        this.$store.commit(PAGE_LIMIT_SET, limit);
-        this.$store.dispatch(PRODUCTS_GET);
-      }
+    pages() {
+      if (this.totalDocs > 15) return this.totalDocs / 15;
+      else return 1;
     },
     uploads() {
       return process.env.VUE_APP_UPLOADS;
     }
   },
-
-  watch: {
-    $route(to, from) {
-      this.$store.dispatch(PRODUCTS_GET, {
-        category: this.$route.query.category
-      });
-    }
-  },
-
   mounted() {
-    this.$store.dispatch(PRODUCTS_GET);
+    this.fetchItems();
+  },
+  methods: {
+    async fetchItems() {
+      const response = await api.get(
+        `/website/products?category=5e62e6fc0c02f01824df9122`
+      );
+      this.items = response.data.items;
+      this.totalDocs = response.data.totalDocs;
+    }
   }
 };
 </script>
