@@ -37,15 +37,9 @@
         >
           <template v-slot:default="props">
             <v-row>
-              <v-col v-for="item in props.items" :key="item._id" cols="12" sm="6" md="4">
+              <v-col v-for="item in props.items" :key="item._id" cols="12" sm="6" md="3">
                 <v-card>
-                  <v-img height="400" :src="`${uploads}/${item.imageURI}`"></v-img>
-                  <v-card-title>{{item._id}}</v-card-title>
-                  <v-card-text></v-card-text>
-                  <v-card-actions>
-                    <v-spacer />
-                    <v-btn @click.stop="openCrudDialog('update', item)" text>Редактировать</v-btn>
-                  </v-card-actions>
+                  <v-img height="300" :src="`${uploads}/${item.imageURI}`"></v-img>
                 </v-card>
               </v-col>
             </v-row>
@@ -95,6 +89,9 @@ export default {
         this.$store.commit(PAGE_LIMIT_SET, limit);
         this.$store.dispatch(PRODUCTS_GET);
       }
+    },
+    uploads() {
+      return process.env.VUE_APP_UPLOADS;
     }
   },
 
