@@ -63,9 +63,6 @@ export default {
     return {};
   },
   computed: {
-    productType() {
-      return this.$route.query.products;
-    },
     items() {
       return this.$store.state.products.items;
     },
@@ -92,6 +89,14 @@ export default {
     },
     uploads() {
       return process.env.VUE_APP_UPLOADS;
+    }
+  },
+
+  watch: {
+    $route(to, from) {
+      this.$store.dispatch(PRODUCTS_GET, {
+        category: this.$route.query.category
+      });
     }
   },
 
