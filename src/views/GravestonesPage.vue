@@ -7,6 +7,7 @@
           <v-card flat>
             <v-card-text class="pt-0">
               <v-select item-text="title" label="Материал"></v-select>
+              <v-checkbox v-for="item in labels" :key="item._id" :label="item.title" />
             </v-card-text>
           </v-card>
         </v-form>
@@ -40,7 +41,7 @@
             </v-row>
           </template>
         </v-data-iterator>
-        <v-pagination v-model="currentPage" class="my-4" :length="pages"></v-pagination>
+        <v-pagination v-if="items.length" v-model="currentPage" class="my-4" :length="pages"></v-pagination>
       </v-col>
     </v-row>
   </v-container>
@@ -49,22 +50,17 @@
 <script>
 import api from "@/plugins/api";
 export default {
-  name: "ProductsPage",
+  name: "GravestonesPage",
   data() {
     return {
       items: [],
       totalDocs: 0,
-      currentPage: 1
+      currentPage: 1,
+      categoryID: "5e62e6fc0c02f01824df9122",
+      labels: []
     };
   },
 
-  // watch: {
-  //   $route(to, from) {
-  //     this.$store.dispatch(PRODUCTS_GET, {
-  //       category: this.$route.query.category
-  //     });
-  //   }
-  // },
   computed: {
     pages() {
       if (this.totalDocs > 15) return this.totalDocs / 15;
@@ -76,11 +72,17 @@ export default {
   },
   mounted() {
     this.fetchItems();
+    api.get(`/website/labels`).then(response => {
+      this.labels = response.data;
+      console.log(this.labels);
+    });
   },
   methods: {
     async fetchItems() {
+      this.items = [];
       const response = await api.get(
-        `/website/products?category=5e62e6fc0c02f01824df9122`
+        `/website/products?category=${this.categoryID}&page=${this.currentPage -
+          1}`
       );
       this.items = response.data.items;
       this.totalDocs = response.data.totalDocs;

@@ -14,11 +14,11 @@ const routes = [
     }
   },
   {
-    path: '/products',
-    name: 'Products',
+    path: '/gravestones',
+    name: 'Gravestones',
     component: () =>
       import(
-        /* webpackChunkName: "products-page" */ '../views/ProductsPage.vue'
+        /* webpackChunkName: "gravestones-page" */ '../views/GravestonesPage.vue'
       ),
     meta: {
       title: 'Памятники'

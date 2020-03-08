@@ -19,7 +19,7 @@
       </div>
       <v-toolbar-items class="d-none d-md-flex">
         <v-btn text to="/" tag="a">Главная</v-btn>
-        <v-btn text exact to="/products?category=5e62e6fc0c02f01824df9122" tag="a">Памятники</v-btn>
+        <v-btn text to="/gravestones?page=1" tag="a">Памятники</v-btn>
         <v-btn text exact to="/products?category=Атрибутика" tag="a">Атрибутика</v-btn>
         <v-btn text to="/decor" tag="a">Декор</v-btn>
         <v-btn text to="/services" tag="a">Услуги</v-btn>
