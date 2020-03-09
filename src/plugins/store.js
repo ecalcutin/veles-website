@@ -10,6 +10,6 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {
-    UI: UIModule
+    UI: UIModule,
   }
 });

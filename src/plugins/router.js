@@ -18,7 +18,7 @@ const routes = [
     name: 'Gravestones',
     component: () =>
       import(
-        /* webpackChunkName: "gravestones-page" */ '../views/Gravestones.vue'
+        /* webpackChunkName: "gravestones-page" */ '../views/GravestonesPage.vue'
       ),
     meta: {
       title: 'Памятники'
