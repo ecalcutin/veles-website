@@ -68,8 +68,8 @@ export default {
   data() {
     return {
       items: [],
-      materialSelected: "",
-      labelSelected: [],
+      materialSelected: "granite",
+      labelSelected: "singles",
       totalDocs: 0,
       currentPage: 1,
       materials: [
@@ -112,10 +112,6 @@ export default {
   },
   mounted() {
     this.fetchItems();
-    // api.get(`/website/labels`).then(response => {
-    //   this.labels = response.data;
-    //   console.log(this.labels);
-    // });
   },
   methods: {
     async fetchItems() {
