@@ -6,8 +6,22 @@
           <v-subheader>Фильтры</v-subheader>
           <v-card flat>
             <v-card-text class="pt-0">
-              <v-select item-text="title" label="Материал"></v-select>
-              <v-checkbox v-for="item in labels" :key="item._id" :label="item.title" />
+              <v-select
+                value="granite"
+                v-model="materialSelected"
+                :items="materials"
+                item-value="code"
+                item-text="title"
+                label="Материал"
+              ></v-select>
+              <v-select
+                v-model="labelSelected"
+                value="singles"
+                :items="labels"
+                item-text="title"
+                item-value="code"
+                label="Тип"
+              ></v-select>
             </v-card-text>
           </v-card>
         </v-form>
@@ -54,10 +68,28 @@ export default {
   data() {
     return {
       items: [],
+      materialSelected: "",
+      labelSelected: [],
       totalDocs: 0,
       currentPage: 1,
-      categoryID: "5e62e6fc0c02f01824df9122",
-      labels: []
+      materials: [
+        {
+          title: "Гранит",
+          code: "granite"
+        },
+        {
+          title: "Мраморная крошка",
+          code: "mramor"
+        },
+        {
+          title: "Фибробетон",
+          code: "concrete"
+        }
+      ],
+      labels: [
+        { title: "Одинарные", code: "singles" },
+        { title: "Двойные", code: "doubles" }
+      ]
     };
   },
 
@@ -70,21 +102,28 @@ export default {
       return process.env.VUE_APP_UPLOADS;
     }
   },
+  watch: {
+    materialSelected(newVal) {
+      this.fetchItems();
+    },
+    labelSelected(newVal) {
+      this.fetchItems();
+    }
+  },
   mounted() {
     this.fetchItems();
-    api.get(`/website/labels`).then(response => {
-      this.labels = response.data;
-      console.log(this.labels);
-    });
+    // api.get(`/website/labels`).then(response => {
+    //   this.labels = response.data;
+    //   console.log(this.labels);
+    // });
   },
   methods: {
     async fetchItems() {
       this.items = [];
       const response = await api.get(
-        `/website/products?category=${this.categoryID}&page=${this.currentPage -
-          1}`
+        `/website/products?category=gravestones&limit=9&page=${this.currentPage}&label=${this.labelSelected}&material=${this.materialSelected}`
       );
-      this.items = response.data.items;
+      this.items = response.data.docs;
       this.totalDocs = response.data.totalDocs;
     }
   }
