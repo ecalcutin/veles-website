@@ -18,11 +18,6 @@ export default {
     currentYear() {
       return new Date().getFullYear();
     }
-  },
-  methods: {
-    navigate(url) {
-      this.$router.push(url);
-    }
   }
 };
 </script>
