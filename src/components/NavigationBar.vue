@@ -24,7 +24,7 @@
           <v-card tile style="min-width: 250px">
             <v-subheader>Меню</v-subheader>
             <v-list tile>
-              <v-list-item>
+              <v-list-item to="/gravestones">
                 <v-list-item-action>
                   <v-icon>mdi-grave-stone</v-icon>
                 </v-list-item-action>

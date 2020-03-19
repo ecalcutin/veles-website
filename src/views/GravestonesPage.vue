@@ -1,11 +1,11 @@
 <template>
-  <v-container fluid class="app-container">
-    <v-row>
-      <v-col cols="12" sm="3" class="d-none d-sm-flex">
+  <div fluid class="app-container">
+    <v-row no-gutters class="pt-5">
+      <v-col sm="2" class="d-none d-sm-flex px-0">
         <v-form>
-          <v-subheader>Фильтры</v-subheader>
+          <v-subheader class="pl-0">Фильтры</v-subheader>
           <v-card flat>
-            <v-card-text class="pt-0">
+            <v-card-text class="pt-0 px-0">
               <v-select
                 value="granite"
                 v-model="materialSelected"
@@ -26,7 +26,7 @@
           </v-card>
         </v-form>
       </v-col>
-      <v-col cols="12" sm="9">
+      <v-col class="px-5" sm="10">
         <v-row no-gutters class="d-sm-none">
           <v-expansion-panels flat>
             <v-expansion-panel>
@@ -47,7 +47,7 @@
         <v-data-iterator hide-default-footer :server-items-length="totalDocs" :items="items">
           <template v-slot:default="props">
             <v-row>
-              <v-col v-for="item in props.items" :key="item._id" cols="12" sm="6" md="3">
+              <v-col v-for="item in props.items" :key="item._id" cols="12" sm="6" md="4">
                 <v-card>
                   <v-img height="300" :src="`${uploads}/${item.imageURI}`"></v-img>
                 </v-card>
@@ -58,7 +58,7 @@
         <v-pagination v-if="items.length" v-model="currentPage" class="my-4" :length="pages"></v-pagination>
       </v-col>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
 <script>
