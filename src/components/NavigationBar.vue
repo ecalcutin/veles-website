@@ -14,8 +14,8 @@
           />
           <span>𝐕𝐄𝐋𝐄𝐒</span>
         </div>
-        <v-spacer class="d-none d-sm-flex"></v-spacer>
       </router-link>
+      <v-spacer class="d-none d-sm-flex"></v-spacer>
       <v-toolbar-items class="d-none d-md-flex">
         <v-menu offset-y>
           <template v-slot:activator="{on}">
@@ -91,7 +91,6 @@ export default {
 
 <style lang="scss" scoped>
 #brand-container {
-  width: 100%;
   div {
     span {
       font-size: 30px;
