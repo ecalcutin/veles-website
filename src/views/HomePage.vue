@@ -1,10 +1,10 @@
 <template>
   <div>
     <v-parallax height="350" :src="require('@/assets/images/parallax-home.jpg')">
-      <v-row justify="center" class="app-container">
+      <v-row no-gutters justify="center" class="app-container">
         <v-col class="py-0" sm="12">
-          <v-row class="fill-height" justify="center" align="center">
-            <v-col class="text-center" cols="12" sm="7" md="7">
+          <v-row class="fill-height" align="center">
+            <v-col class="" cols="12" sm="6" md="6">
               <h1 class="display-1 font-weight-thin mb-4">
                 Гарантия памяти
                 <br />о ваших близких
@@ -23,7 +23,7 @@
                 elevation="24"
               >Выбрать памятник</v-btn>
             </v-col>
-            <v-col class="py-0 image-breakpoint" cols="12" sm="5" md="5">
+            <v-col class="py-0 d-none d-sm-flex" cols="12" sm="6" md="6">
               <v-img :src="require('@/assets/images/BannerImg.png')" />
             </v-col>
           </v-row>
@@ -31,7 +31,7 @@
       </v-row>
     </v-parallax>
     <SectionBlock id="quality-block" color="#dcd7d2" title="Высочайшее качество">
-      <v-row align="center">
+      <v-row no-gutters align="center">
         <v-col cols="12" sm="6">
           <v-img
             contain
@@ -54,7 +54,7 @@
       </v-row>
     </SectionBlock>
     <SectionBlock id="advantages-block" title="Преимущества">
-      <v-row justify="space-between">
+      <v-row no-gutters justify="space-between">
         <v-col cols="12" sm="6">
           <v-row no-gutters>
             <v-avatar class="avatar" color="accent" size="64">
@@ -160,11 +160,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@media only screen and (max-width: 780px) {
-  .image-breakpoint {
-    display: none !important;
-  }
-}
 #quality-block {
   h3 {
     margin-bottom: 24px;

@@ -1,9 +1,9 @@
 <template>
   <v-sheet :dark="dark" class="section-block" tile :height="height" :color="color">
-    <v-container fluid class="app-container">
+    <div fluid class="app-container">
       <h2 class="display-1">{{title}}</h2>
       <slot></slot>
-    </v-container>
+    </div>
   </v-sheet>
 </template>
 
