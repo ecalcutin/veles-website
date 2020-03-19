@@ -70,8 +70,8 @@ export default {
   data() {
     return {
       items: [],
-      materialSelected: "granite",
-      labelSelected: "singles",
+      materialSelected: "",
+      labelSelected: "",
       totalDocs: 0,
       currentPage: 1,
       materials: [
@@ -88,14 +88,14 @@ export default {
           code: "concrete"
         },
         {
-          title: "Все",
+          title: "Любой",
           code: ""
         }
       ],
       labels: [
         { title: "Одинарные", code: "singles" },
         { title: "Двойные", code: "doubles" },
-        { title: "Все", code: "" }
+        { title: "Любой", code: "" }
       ]
     };
   },
