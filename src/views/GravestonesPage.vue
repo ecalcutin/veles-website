@@ -26,7 +26,7 @@
           </v-card>
         </v-form>
       </v-col>
-      <v-col class="px-5" sm="10">
+      <v-col class="pl-5" sm="10">
         <v-row no-gutters class="d-sm-none">
           <v-expansion-panels flat>
             <v-expansion-panel>
@@ -50,6 +50,7 @@
               <v-col v-for="item in props.items" :key="item._id" cols="12" sm="6" md="3">
                 <v-card>
                   <v-img contain :src="`${uploads}/${item.imageURI}`"></v-img>
+                  <v-card-title class="justify-center">{{item.title}}</v-card-title>
                 </v-card>
               </v-col>
             </v-row>
