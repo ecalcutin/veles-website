@@ -1,6 +1,6 @@
 <template>
   <div fluid class="app-container">
-    <v-row no-gutters class="pt-5">
+    <v-row no-gutters class="pt-5" justify="space-between">
       <v-col sm="2" class="d-none d-sm-flex px-0">
         <v-form>
           <v-subheader class="pl-0">Фильтры</v-subheader>
@@ -26,7 +26,7 @@
           </v-card>
         </v-form>
       </v-col>
-      <v-col class="pl-5" sm="10">
+      <v-col class="pl-5" sm="9">
         <v-row no-gutters class="d-sm-none">
           <v-expansion-panels flat>
             <v-expansion-panel>
@@ -47,7 +47,7 @@
         <v-data-iterator hide-default-footer :server-items-length="totalDocs" :items="items">
           <template v-slot:default="props">
             <v-row>
-              <v-col v-for="item in props.items" :key="item._id" cols="12" sm="6" md="3">
+              <v-col v-for="item in props.items" :key="item._id" cols="12" sm="6" md="4">
                 <v-card>
                   <v-img contain :src="`${uploads}/${item.imageURI}`"></v-img>
                   <v-card-title class="justify-center">{{item.title}}</v-card-title>
@@ -102,7 +102,7 @@ export default {
 
   computed: {
     pages() {
-      if (this.totalDocs > 15) return this.totalDocs / 15;
+      if (this.totalDocs > 9) return parseInt(this.totalDocs / 9 + 1, 10);
       else return 1;
     },
     uploads() {
@@ -114,6 +114,9 @@ export default {
       this.fetchItems();
     },
     labelSelected(newVal) {
+      this.fetchItems();
+    },
+    currentPage(newVal) {
       this.fetchItems();
     }
   },
