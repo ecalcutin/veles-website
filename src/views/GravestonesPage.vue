@@ -47,9 +47,9 @@
         <v-data-iterator hide-default-footer :server-items-length="totalDocs" :items="items">
           <template v-slot:default="props">
             <v-row>
-              <v-col v-for="item in props.items" :key="item._id" cols="12" sm="6" md="4">
+              <v-col v-for="item in props.items" :key="item._id" cols="12" sm="6" md="3">
                 <v-card>
-                  <v-img height="300" :src="`${uploads}/${item.imageURI}`"></v-img>
+                  <v-img contain :src="`${uploads}/${item.imageURI}`"></v-img>
                 </v-card>
               </v-col>
             </v-row>
@@ -63,6 +63,7 @@
 
 <script>
 import api from "@/plugins/api";
+import qs from "query-string";
 export default {
   name: "GravestonesPage",
   data() {
@@ -84,11 +85,16 @@ export default {
         {
           title: "Фибробетон",
           code: "concrete"
+        },
+        {
+          title: "Все",
+          code: ""
         }
       ],
       labels: [
         { title: "Одинарные", code: "singles" },
-        { title: "Двойные", code: "doubles" }
+        { title: "Двойные", code: "doubles" },
+        { title: "Все", code: "" }
       ]
     };
   },
@@ -116,9 +122,15 @@ export default {
   methods: {
     async fetchItems() {
       this.items = [];
-      const response = await api.get(
-        `/website/products?category=gravestones&limit=9&page=${this.currentPage}&label=${this.labelSelected}&material=${this.materialSelected}`
-      );
+      const query = qs.stringify({
+        page: this.currentPage,
+        label: this.labelSelected,
+        material: this.materialSelected,
+        isPublished: true,
+        category: "gravestones",
+        limit: 9
+      });
+      const response = await api.get(`/website/products?${query}`);
       this.items = response.data.docs;
       this.totalDocs = response.data.totalDocs;
     }
